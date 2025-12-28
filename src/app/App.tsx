@@ -8,8 +8,12 @@ import { Prazos } from './components/Prazos';
 import { Documentos } from './components/Documentos';
 import { Prestadores } from './components/Prestadores';
 import { Configuracoes } from './components/Configuracoes';
+import { Reservas } from './components/Reservas';
+import { Encomendas } from './components/Encomendas';
+import { Avisos } from './components/Avisos';
+import { Unidades } from './components/Unidades';
 
-type Section = 'dashboard' | 'chamados' | 'prazos' | 'documentos' | 'prestadores' | 'configuracoes';
+type Section = 'dashboard' | 'chamados' | 'prazos' | 'documentos' | 'prestadores' | 'reservas' | 'encomendas' | 'avisos' | 'unidades' | 'configuracoes';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState<Section>('dashboard');
@@ -32,6 +36,14 @@ export default function App() {
         return <Documentos />;
       case 'prestadores':
         return <Prestadores />;
+      case 'reservas':
+        return <Reservas />;
+      case 'encomendas':
+        return <Encomendas />;
+      case 'avisos':
+        return <Avisos />;
+      case 'unidades':
+        return <Unidades />;
       case 'configuracoes':
         return <Configuracoes />;
       default:
