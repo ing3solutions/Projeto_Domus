@@ -1,6 +1,6 @@
-import { Home, AlertCircle, Calendar, FileText, Users } from 'lucide-react';
+import { Home, AlertCircle, CalendarCheck, Megaphone, MoreHorizontal } from 'lucide-react';
 
-type Section = 'dashboard' | 'chamados' | 'prazos' | 'documentos' | 'prestadores';
+type Section = 'dashboard' | 'chamados' | 'prazos' | 'documentos' | 'prestadores' | 'reservas' | 'encomendas' | 'avisos' | 'unidades' | 'configuracoes';
 
 interface BottomNavigationProps {
   activeSection: Section;
@@ -10,9 +10,9 @@ interface BottomNavigationProps {
 const navItems = [
   { id: 'dashboard' as Section, label: 'Início', icon: Home },
   { id: 'chamados' as Section, label: 'Chamados', icon: AlertCircle },
-  { id: 'prazos' as Section, label: 'Agenda', icon: Calendar },
-  { id: 'documentos' as Section, label: 'Docs', icon: FileText },
-  { id: 'prestadores' as Section, label: 'Equipe', icon: Users },
+  { id: 'reservas' as Section, label: 'Reservas', icon: CalendarCheck },
+  { id: 'avisos' as Section, label: 'Avisos', icon: Megaphone },
+  { id: 'configuracoes' as Section, label: 'Mais', icon: MoreHorizontal },
 ];
 
 export function BottomNavigation({ activeSection, onSectionChange }: BottomNavigationProps) {
