@@ -1,6 +1,6 @@
-import { Home, AlertCircle, Calendar, FileText, Users, Settings, CalendarCheck, Package, Megaphone, Building } from 'lucide-react';
+import { Home, AlertCircle, Calendar, FileText, Users, Settings } from 'lucide-react';
 
-type Section = 'dashboard' | 'chamados' | 'prazos' | 'documentos' | 'prestadores' | 'reservas' | 'encomendas' | 'avisos' | 'unidades' | 'configuracoes';
+type Section = 'dashboard' | 'chamados' | 'prazos' | 'documentos' | 'prestadores' | 'configuracoes';
 
 interface SidebarProps {
   activeSection: Section;
@@ -12,10 +12,6 @@ const menuItems = [
   { id: 'dashboard' as Section, label: 'Dashboard', icon: Home },
   { id: 'chamados' as Section, label: 'Chamados', icon: AlertCircle },
   { id: 'prazos' as Section, label: 'Prazos', icon: Calendar },
-  { id: 'reservas' as Section, label: 'Reservas', icon: CalendarCheck },
-  { id: 'encomendas' as Section, label: 'Encomendas', icon: Package },
-  { id: 'avisos' as Section, label: 'Avisos', icon: Megaphone },
-  { id: 'unidades' as Section, label: 'Unidades', icon: Building },
   { id: 'documentos' as Section, label: 'Documentos', icon: FileText },
   { id: 'prestadores' as Section, label: 'Prestadores', icon: Users },
   { id: 'configuracoes' as Section, label: 'Configurações', icon: Settings },

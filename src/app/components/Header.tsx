@@ -19,9 +19,9 @@ export function Header({ onMenuClick }: HeaderProps) {
           
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-lg bg-[#588157] flex items-center justify-center">
-              <span className="text-white font-semibold text-sm">D</span>
+              <span className="text-white font-semibold text-sm">SC</span>
             </div>
-            <span className="text-white/90 font-medium hidden sm:block">Domus</span>
+            <span className="text-white/90 font-medium hidden sm:block">SíndCondo</span>
           </div>
         </div>
 
