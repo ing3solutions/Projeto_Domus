@@ -1,0 +1,83 @@
+🚀 Novos Módulos Sugeridos
+1. Gestão de Reservas (Áreas Comuns)
+Não basta ter prazos, o síndico precisa gerenciar quem usa o quê.
+
+Funcionalidade: Cadastro de espaços (Salão de Festas, Churrasqueira, Academia).
+
+Regras de Negócio: Limite de convidados, taxa de limpeza automática, termos de uso.
+
+No Replit: Criar um calendário onde o usuário clica e reserva, verificando conflitos de data.
+
+2. Mural de Avisos Digital (Comunicação Oficial)
+Substituir o papel no elevador e o caos do WhatsApp.
+
+Funcionalidade: Avisos com confirmação de leitura e nível de urgência (Informativo, Manutenção, Urgente).
+
+Diferencial: Possibilidade de criar Enquetes Rápidas (ex: "Qual cor pintar a fachada?").
+
+3. Gestão de Encomendas (Portaria)
+Um dos maiores problemas atuais com o boom do e-commerce.
+
+Funcionalidade: Registro de chegada de pacotes pela portaria.
+
+Fluxo: O sistema gera um QR Code ou notificação "Você tem uma encomenda aguardando".
+
+Status: Recebido, Notificado, Entregue (com assinatura digital).
+
+4. Cadastro de Unidades e Moradores (Censo)
+A base de tudo.
+
+Funcionalidade: Listagem de Blocos -> Apartamentos -> Moradores -> Veículos -> Pets.
+
+Segurança: Lista de convidados autorizados e prestadores de serviço frequentes.
+
+🛠 Atualização Técnica para o Replit (Schema & Lógica)
+Para o Replit conseguir codificar isso, precisamos expandir o banco de dados. Envie estas instruções adicionais para ele:
+
+Novas Tabelas (Database Schema):
+Espacos: id, nome, capacidade, valor_reserva, regras_txt.
+
+Reservas: id, espacoId, moradorId, data, status (pendente/aprovada).
+
+Encomendas: id, destinatarioId, descricao, status (na_portaria/retirado), data_recebimento.
+
+Avisos: id, titulo, conteudo, prioridade, data_expiracao.
+
+Unidades: id, bloco, numero, proprietarioId.
+
+📝 Prompt Adicional para o Replit (Copie e Cole)
+Adicione este bloco ao chat do Replit para implementar essas funções específicas:
+
+Markdown
+
+## 🆕 EXPANSÃO DE DOMÍNIO: FUNÇÕES ESPECÍFICAS DE CONDOMÍNIO
+
+Agora, adicione os seguintes módulos funcionais ao backend e frontend:
+
+### 1. Sistema de Reservas de Espaços
+- Interface: Grid de cards com as fotos dos espaços (Salão, Churrasqueira).
+- Lógica: O usuário seleciona uma data; o sistema deve validar se já existe reserva ativa no banco de dados para aquele `espacoId` naquela data.
+
+### 2. Gestão de Encomendas (Módulo Portaria/Adm)
+- Interface: Tabela simples mostrando: "Data de Chegada", "Destinatário (Apto)", "Status".
+- Ação: Botão para marcar como "Entregue ao Morador" com timestamp.
+
+### 3. Mural de Avisos e Comunicados
+- Componente: Card de destaque no Dashboard para "Últimos Avisos".
+- Cores de prioridade: Vermelho para interrupção de água/luz, Amarelo para manutenções, Verde para informativos gerais.
+
+### 4. Cadastro de Unidades (Hierarquia)
+- Estruturar a relação: Um Condomínio tem vários Blocos, que têm várias Unidades (Aptos), que têm vários Moradores.
+- Adicionar campos para: Placa do Carro e Nome do Pet (essencial para identificação no condomínio).
+💡 Dica de UX para o SindCondo
+Como suas telas [image_18abc5.png] são muito limpas e elegantes, evite encher o Dashboard de botões.
+
+Sugestão: Use o conceito de "Ações Rápidas" no Header ou em um botão flutuante.
+
+"Registrar Encomenda"
+
+"Criar Comunicado"
+
+"Nova Reserva"
+
+Isso mantém o visual "Apple" que você já conquistou, mas com o poder de um ERP completo.
