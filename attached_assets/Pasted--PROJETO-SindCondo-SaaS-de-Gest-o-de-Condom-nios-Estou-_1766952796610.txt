@@ -1,0 +1,60 @@
+# PROJETO: SindCondo - SaaS de Gestão de Condomínios
+
+Estou desenvolvendo um SaaS premium para gestão de condomínios. Já tenho o conceito visual e de UX definido (estilo "Apple", limpo, tons de verde floresta e bege). Preciso agora transformar o protótipo visual em uma aplicação funcional Fullstack.
+
+## 🛠 TECH STACK (Obrigatório)
+- **Frontend:** React (Vite) + Tailwind CSS + Lucide React (ícones).
+- **Backend:** Node.js (Express).
+- **Database:** PostgreSQL (via Prisma ORM) ou SQLite para o MVP inicial.
+- **Autenticação:** JWT ou sessão simples para o MVP.
+- **Linguagem:** TypeScript (preferencialmente) ou JavaScript.
+
+## 🎨 DESIGN SYSTEM & UI
+Baseado nas imagens de referência, o sistema deve seguir estritamente:
+- **Cores Primárias:** Verde Floresta Escuro (Sidebar e botões principais) e Bege/Creme Suave (Fundo da aplicação).
+- **Layout:** Sidebar lateral fixa à esquerda, Header com busca e notificações, Área de conteúdo central com cards arredondados.
+- **Componentes:**
+  - Cards com sombras suaves e bordas arredondadas (radius-lg ou xl).
+  - Modais centralizados com overlay escuro.
+  - Badges coloridas para status (Vermelho=Aberto, Amarelo=Em andamento, Verde=Resolvido).
+
+## 🗄 ARQUITETURA DE DADOS (Schema Sugerido)
+Preciso que crie o schema do banco de dados (Prisma) cobrindo estas entidades:
+1. **Condominio:** (Tenant principal).
+2. **User:** (Nome, email, senha, role [admin, sindico, morador], condoId).
+3. **Chamado (Ticket):** (Título, descrição, status, prioridade, local, responsavelId, anexos, condoId).
+4. **Evento (Prazo):** (Título, data, hora, local, tipo [Assembleia, Manutenção, Vistoria], status).
+5. **Documento:** (Nome, url, categoria, visibilidade, condoId).
+6. **Prestador:** (Nome, serviço, contrato_vencimento).
+
+## 🚀 FUNCIONALIDADES PARA IMPLEMENTAR AGORA
+
+### 1. Dashboard (Visão Geral)
+- Exibir 4 Cards de KPI no topo: Chamados Abertos, Prazos Próximos, Contratos a Vencer, Taxa de Resolução.
+- Lista de "Atividades Recentes" (Feed de logs do sistema).
+
+### 2. Módulo de Chamados (Ocorrências)
+- **Visualização:** Lista ou Cards.
+- **Filtros:** Todos, Aberto, Em Andamento, Resolvido.
+- **Ação:** Botão "Novo Chamado" que abre um Modal.
+- **Modal de Criação:** Campos para Descrição, Tipo (Manutenção, Barulho), Prioridade, Local, Responsável e Upload de Anexos.
+
+### 3. Módulo de Prazos & Assembleias
+- Lista cronológica de eventos.
+- Badges identificando o tipo (ex: "Assembleia", "Vistoria", "Pagamento").
+- Modal para criar novo evento com Data/Hora e notificação.
+
+### 4. Módulo de Documentos
+- Interface estilo "Gerenciador de Arquivos".
+- Pastas visuais (Atas, Contratos, Balancetes).
+- Modal de Upload (Drag & drop).
+
+### 5. Configurações
+- Menu com abas: Perfil, Dados do Condomínio, Notificações, Segurança.
+
+## ⚠️ INSTRUÇÕES DE EXECUÇÃO
+1. Configure a estrutura do projeto (Client/Server).
+2. Crie o schema do Prisma e o arquivo de migração inicial.
+3. Crie os componentes de UI (Sidebar, Layout, Cards) seguindo a paleta de cores descrita.
+4. Implemente as rotas de API para CRUD de Chamados e Prazos primeiro.
+5. Conecte o Frontend à API para que os dados do Dashboard sejam reais (vindos do banco).
